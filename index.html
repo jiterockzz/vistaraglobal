@@ -7,6 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/styles.css" />
+  <script src="static/script.js"></script>
+
+
   <!-- 🔍 SEO Tags -->
   <meta name="description" content="Vistara Global - India’s trusted export company offering premium Pulses, Maize, and Rice to the global market.">
   <meta name="keywords" content="Vistara Global, pulses export, maize supplier India, rice exporter, Indian agriculture, export from India, best quality grains, food export">
@@ -26,18 +29,32 @@
   <meta name="twitter:image" content="https://vistaraglobal.in/images/logo.png" />
 </head>
 <body>
-  <header>
-    <h1>Vistara Global</h1>
-    <nav>
-      <a href="products.html">Products</a>
-      <a href="#inquiry">Inquiry</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<!-- HTML -->
+<header class="main-header">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="logo-container">
+    <img src="static/images/logo.png" alt="Vistara Global Logo" class="logo">
+    <!-- <h1 class="animate-heading">Vistara Global</h1> -->
+    </div>
+    
+<div class="menu-toggle" id="menu-toggle">&#9776;</div>
+<nav class="nav-menu" id="nav-menu">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#products">Products</a>
+  <a href="#inquiry">Inquiry</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section class="hero">
-    <h2>Sourcing India’s Best for the Globe</h2>
-    <p>Premium quality Pulses, Maize, and Rice – delivered with trust and integrity from Jalna, India</p>
+  </div>
+</header>
+
+
+
+  <section class="site-heading">
+    <h2 class="site-heading-h">Sourcing India’s Best for the Globe</h2>
+    <p class="site-heading-p">Premium quality Pulses, Maize, and Rice – delivered with trust and integrity from Jalna, India</p>
   </section>
 
   <section class="section" id="products">
