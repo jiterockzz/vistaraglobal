@@ -7,11 +7,28 @@ window.addEventListener("DOMContentLoaded", () => {
     subheading.classList.add("animate");
   }, 800);
 
-  // Mobile menu toggle
   const toggle = document.getElementById("menu-toggle");
   const nav = document.getElementById("nav-menu");
-  
+
   toggle.addEventListener("click", () => {
     nav.classList.toggle("show");
+  });
+
+  // Close mobile menu on nav link click
+  const navLinks = nav.querySelectorAll("a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("show");
+    });
+  });
+
+  // Optional: Header background change on scroll (if you want)
+  const header = document.querySelector(".main-header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > window.innerHeight - 100) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
   });
 });

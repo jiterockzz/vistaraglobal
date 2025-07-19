@@ -8,15 +8,16 @@ body {
 }
 
 .main-header {
-  position: relative;
-  height: 25vh;
-  color: black;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  overflow: hidden;
-  z-index: 0;
-  background-color:wheat;
+    position: fixed;
+    height: 15vh;
+    color: black;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 5;
+    background-color: wheat;
+    top: 0;
+    width: 100%;
 }
 
 .main-header::before {
@@ -83,7 +84,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .main-header .container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     text-align: center;
   }
@@ -123,6 +124,19 @@ body {
   text-decoration: none;
   font-weight: 500;
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  margin-right: 1rem;
+}
 
 /* Mobile styles */
 @media (max-width: 486px) {
@@ -144,6 +158,7 @@ body {
 
   .nav-menu.show {
     display: flex;
+    width: fit-content;
   }
 
   .nav-menu a {
@@ -152,28 +167,46 @@ body {
     border-bottom: 1px solid #ccc;
     color: #000;
   }
+  .logo {
+  height: 80px;
+  width: auto;
+  margin-right: 1rem;
 }
-
 
 .logo-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 5;
 }
-
-.logo {
-  height: 120px;
-  width: auto;
-  margin-right: 1rem;
 }
+
+.site-heading {
+
+
+    position: relative;
+    color: white;
+    margin-top: 16vh;
+    text-align: center;
+    height: 38vw;
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+    animation: backgroundSlide 15s infinite;
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+
+
 
 
 .site-heading .site-heading-h.animate {
   opacity: 1;
   visibility: visible;
   animation: fadeSlide 1s ease forwards;
+
 }
 
 .site-heading .site-heading-p.animate {
@@ -181,21 +214,10 @@ body {
   visibility: visible;
   animation: fadeSlide 1s ease forwards;
   animation-delay: 0.5s;
+
 }
 
 
-.site-heading {
-  position: relative;
-  color: white;
-  margin: 1rem 1rem;
-  text-align: center;
-  height: 38vw;
-  padding: 2rem;
-  background-size: cover;
-  background-position: center;
-  animation: backgroundSlide 15s infinite;
-  background-image: url('images/image.jpg');
-}
 
 /* Add keyframes for background slideshow */
 @keyframes backgroundSlide {
@@ -209,18 +231,17 @@ body {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url('images/image.jpg') no-repeat center center / cover;
   filter: blur(3px) brightness(0.5); /* better control */
   z-index: -1;
 }
 
-.site-heading::after {
+/* .site-heading::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
   z-index: -1;
-}
+} */
 
 
   
