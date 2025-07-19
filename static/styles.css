@@ -185,7 +185,20 @@ body {
 
 .site-heading {
 
-  position: relative;
+
+    position: relative;
+    color: white;
+    margin-top: 16vh;
+    text-align: center;
+    height: 38vw;
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+    animation: backgroundSlide 15s infinite;
+    margin-right: 1vw;
+    margin-left: 1vw;
+
+     position: relative;
   text-align: center;
   padding: 2rem 0;
   color: #fff;
