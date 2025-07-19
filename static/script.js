@@ -32,3 +32,24 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const points = [
+    "Quality Assurance",
+    "Years of Experience",
+    "Trusted Global Network",
+    "24x7 Customer Support",
+    "Transparent Processes"
+  ];
+
+  let index = 0;
+  const pointEl = document.getElementById("trust-point");
+
+  setInterval(() => {
+    index = (index + 1) % points.length;
+    pointEl.classList.remove("fade");
+    void pointEl.offsetWidth; // trigger reflow
+    pointEl.textContent = points[index];
+    pointEl.classList.add("fade");
+  }, 3000);
+});
