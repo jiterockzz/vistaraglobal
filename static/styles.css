@@ -5,6 +5,7 @@
 body {
   margin: 3px;
   font-family: 'Outfit', sans-serif;
+  background-color: floralwhite;
 }
 
 .main-header {
@@ -120,10 +121,30 @@ body {
 }
 
 .nav-menu a {
-  margin-left: 2rem;
-  text-decoration: none;
-  font-weight: 500;
+  position: relative;
+  color: #000;
+  transition: color 0.3s ease;
 }
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0%;
+  height: 2px;
+  background-color: #005577;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #005577;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -186,17 +207,7 @@ body {
 .site-heading {
 
 
-    position: relative;
-    color: white;
-    margin-top: 16vh;
-    text-align: center;
-    height: 38vw;
-    padding: 2rem;
-    background-size: cover;
-    background-position: center;
-    animation: backgroundSlide 15s infinite;
-    margin-right: 1vw;
-    margin-left: 1vw;
+  
 
      position: relative;
   text-align: center;
@@ -243,10 +254,11 @@ body {
 .site-heading::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  filter: blur(3px) brightness(0.5); /* better control */
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
   z-index: -1;
 }
+
 
 .site-heading::after {
   content: '';
@@ -270,6 +282,7 @@ body {
   position: relative;
   transform: translateY(0px);
   transition: all 1s ease-in-out;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .site-heading .site-heading-p {
@@ -283,6 +296,7 @@ body {
   position: relative;
   transform: translateY(0px);
   transition: all 1s ease-in-out;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .site-heading .site-heading-h.animate {
@@ -303,32 +317,123 @@ body {
                       0, 13.1538, 0, 1);
 }
 
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #005577;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.service-card img {
+    width: 100%;
+  height: 200px; /* You can adjust this height */
+  object-fit: cover; /* Ensures image fills the area without distortion */
+  border-radius: 8px;
+
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #005577;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
     .section {
       padding: 2rem;
     }
     .products {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
     }
     .card {
-      background: #fff;
-      padding: 1.5rem;
-      margin: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      width: 300px;
-      text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card h3 {
-      color: #005577;
-    }
+    
+   .card img {
+   
+      width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+    
+
+    .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+#products h2 {
+  font-size: 1.3rem;
+  color: #005577;
+  margin-bottom: 0.5rem;
+}
+
+#products p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+    
+
     .inquiry {
       background: #e6f0ff;
       padding: 2rem;
       border-radius: 10px;
       max-width: 600px;
-      margin: 2rem auto;
+      margin: 1rem auto;
     }
     .inquiry input, .inquiry textarea {
       width: 100%;
